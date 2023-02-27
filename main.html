@@ -71,7 +71,7 @@
 		  observer.unobserve(entry.target);
 	  }
 
-	  const imgObserver = new IntersectionObserver(loading, {
+	  const imgObserver = new IntersectionObserver(loadImg, {
 		  root: null,
 		  threshold: 0.5,
 		  rootMargin: '200px'
