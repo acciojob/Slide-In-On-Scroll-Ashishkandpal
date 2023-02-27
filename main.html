@@ -59,25 +59,24 @@
     }
 
 	  //adding the images load
-	  const imgTargets = document.querySelectorAll('.slide-in');
+      const imgTargets = document.querySelectorAll(".slide-in");
 
-	  const loadImg = function(entries, observer) {
-		  const[entry] = entries;
-		  if(!entry.isIntesecting) return;
+      const loadImg = function (entries, observer) {
+        const [entry] = entries;
+        if (!entry.isIntersecting) return;
 
-		  entry.target.addEventListener('load', function() {
-			  entry.target.classList.add('active');
-		  });
-		  observer.unobserve(entry.target);
-	  }
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target);
+      };
 
-	  const imgObserver = new IntersectionObserver(loadImg, {
-		  root: null,
-		  threshold: 0.5,
-		  rootMargin: '200px'
-	  });
+      const imgObserver = new IntersectionObserver(loadImg, {
+        root: null,
+        threshold: 0.5,
+      });
 
-	  imgTargets.forEach(img => imgObserver.observe(img));
+      imgTargets.forEach((img) => {
+        return imgObserver.observe(img);
+      });
 
   </script>
 
